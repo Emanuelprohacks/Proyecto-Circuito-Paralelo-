@@ -1,2 +1,0 @@
-# Proyecto-Circuito-Paralelo-
-tarea
