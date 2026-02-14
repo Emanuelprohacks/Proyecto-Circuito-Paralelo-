@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+</head>
+<style>
+    *{
+        margin: 1px;
+        padding: 0;
+        border: #7ff9c7 0.5px solid;
+    }
+    body{
+        background: linear-gradient(  rgb(0, 0, 0) , rgb(0, 0, 0) ,rgb(0, 0, 0) );
+
+    }
+    p{
+        color: #d8e783;
+    }
+    h1{
+        color: #ff85d5;
+    }
+    h2{
+        color: #25f43a;
+
+    }
+    li{
+        color: rgb(75, 249, 255);
+    }
+    strong{
+    color: blue;         
+    }
+    :root{
+        --whidth-off: #808080;
+        --whitdh-on: #e2f230;
+        --bold-off: #5d5d5d;
+        --bold-on: #e2f230;
+    }
+    .container{
+        border: 5px solid #9c81fe;
+        display: flex;
+        flex-wrap: wrap;
+        width: 200px;
+        height: 200px;
+        margin: 10px auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .line1{
+        border: 0;
+        width: 100%;
+        height: 8px;
+        background-color: var(--bold-off,--bold-on);
+    }
+    .line2{
+        border: 0;
+        width: 100%;
+        left: 0%;
+        height: 8px;
+        background-color: var(--bold-off,--bold-on);
+    }
+    .line3{
+        border: 0;
+        width: 100%;
+        left: 0%;
+        height: 8px;
+        background-color: var(--bold-off,--bold-on);
+    }
+    .line1,.line2,.line3{
+        z-index: 1;
+    }
+    .circulo1{
+        position: absolute;
+        left: 4%;
+        top: 46px;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        background-color: var(--whidth-off,--whitdh-on);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 1px solid #000000;
+    }
+    .circulo2{
+        position: absolute;
+        left: 4%;
+        top: 116px;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        background-color: var(--whidth-off,--whitdh-on);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 1px solid #000000;
+    }
+    .circulo3{
+        position: absolute;
+        left: 65%;
+        top: 46px;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        background-color: var(--whidth-off,--whitdh-on);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 1px solid #000000;
+    }
+    .circulo4{
+        position: absolute;
+        left: 65%;
+        top: 116px;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        background-color: var(--whidth-off,--whitdh-on);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        border: 1px solid #000000;
+    }
+    .circulo1,.circulo2,.circulo3,.circulo4{
+        z-index: 2;
+    }
+        .bateria{
+            position: absolute;
+            border: 0px solid #ecf230;
+            left: 40%;
+            top: 160px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        /* Checkbox oculto */
+        #toggle-switch{
+            display: none;
+        }
+        /* Cambiar colores cuando checkbox está activado */
+        #toggle-switch:checked ~ #cont .circulo1,
+        #toggle-switch:checked ~ #cont .circulo2,
+        #toggle-switch:checked ~ #cont .circulo3,
+        #toggle-switch:checked ~ #cont .circulo4{
+            background-color: #e2f230;
+        }
+        #toggle-switch:checked ~ #cont .line1,
+        #toggle-switch:checked ~ #cont .line2,
+        #toggle-switch:checked ~ #cont .line3{
+            background-color: #00ff00;
+        }
+        .rayo{ 
+            border: 0;
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+            font-size: 20px;
+            width: 10%;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes rayoSubir {
+            from {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-200px);
+                opacity: 1;
+            }
+        }
+        #toggle-switch:checked ~ #cont .rayo {
+            animation: rayoSubir 1s ease-in-out infinite;
+        }
+        .rayo:nth-child(9) { left: 0%; animation-delay: 0s; }
+        .rayo:nth-child(10) { left: 5%; animation-delay: 0.05s; }
+        .rayo:nth-child(11) { left: 10%; animation-delay: 0.1s; }
+        .rayo:nth-child(12) { left: 15%; animation-delay: 0.15s; }
+        .rayo:nth-child(13) { left: 20%; animation-delay: 0.2s; }
+        .rayo:nth-child(14) { left: 25%; animation-delay: 0.25s; }
+        .rayo:nth-child(15) { left: 30%; animation-delay: 0.3s; }
+        .rayo:nth-child(16) { left: 35%; animation-delay: 0.35s; }
+        .rayo:nth-child(17) { left: 40%; animation-delay: 0.4s; }
+        .rayo:nth-child(18) { left: 45%; animation-delay: 0.45s; }
+        .rayo:nth-child(19) { left: 50%; animation-delay: 0.5s; }
+        .rayo:nth-child(20) { left: 55%; animation-delay: 0.55s; }
+        .rayo:nth-child(21) { left: 60%; animation-delay: 0.6s; }
+        .rayo:nth-child(22) { left: 65%; animation-delay: 0.65s; }
+        .rayo:nth-child(23) { left: 70%; animation-delay: 0.7s; }
+        .rayo:nth-child(24) { left: 75%; animation-delay: 0.75s; }
+        .rayo:nth-child(25) { left: 80%; animation-delay: 0.8s; }
+        .rayo:nth-child(26) { left: 85%; animation-delay: 0.85s; }
+        .rayo:nth-child(27) { left: 90%; animation-delay: 0.9s; }
+        .rayo:nth-child(28) { left: 95%; animation-delay: 0.95s; }
+    }
+</style>
+<body>
+    <h1>¿Que es un circuito paralelo?</h1>
+    <p>
+        En circuito paralelo es una forma de conexión eléctrica en la que los componentes (como resistencias, bombillas, condensadores, etc.) 
+     están conectados de tal manera que cada uno tiene su propia trayectoria independiente para la corriente. Esto significa que los terminales 
+      de entrada de todos los dispositivos coinciden entre sí, y lo mismo ocurre con los terminales de salida.
+    </p>
+    <h2>Características principales</h2>
+    <ol>
+        <li> <strong>Voltaje constante:</strong> Todos los elementos conectados en paralelo reciben el mismo voltaje.</li>
+        <li> <strong>Independencia de funcionamiento:</strong> Si un componente falla, los demás siguen funcionando normalmente.</li>
+        <li> <strong>Uso cotidiano:</strong> Es el tipo de conexión que se emplea en las instalaciones eléctricas de las viviendas.</li>
+        <li> <strong>Corriente total:</strong> La corriente que circula por el circuito es la suma de las corrientes que pasan por cada rama.</li>
+    </ol>
+    <h1>Circuito Paralelo</h1>
+    <h2>Partes de un circuito electrico</h2>
+    <ul>
+        <li> <strong>Fuente de alimentación:</strong> Proporciona la energía necesaria para que el circuito funcione correctamente.</li>
+        <li> <strong>Conductores: </strong> Cables o pistas que conectan los elementos y permiten el flujo de corriente.</li>
+        <li><strong> Receptores:</strong> Son los dispositivos que consumen la energía eléctrica, como bombillas, motores, etc.</li>
+        <li><strong>Elementos de control:</strong>Permiten abrir, cerrar o dirigir la corriente: interruptores, pulsadores, conmutadores.</li>
+        <li><strong>Elementos de protección:</strong>Protegen el circuito y a las personas frente a sobrecorrientes o cortocircuitos: fusibles, disyuntores. </li>
+        <li><strong>Puntos de conexión y nodos:</strong>Nodos donde se unen dos o más conductores; en esquemas marcan las ramas del circuito.</li>
+        <li><strong>Carga:</strong>Término general para cualquier componente que transforma la energía eléctrica en otra forma (luz, calor, movimiento).</li>    
+    </ul>
+    <h1 style="text-align: center;">EJEMPLO DE CIRCUITO PARALELO</h1>
+    <input type="checkbox" id="toggle-switch">
+    <div class="container" id="cont">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="circulo1">💡</div>
+        <div class="circulo2">💡</div>
+        <div class="circulo3">💡</div>
+        <div class="circulo4">💡</div>
+        <label for="toggle-switch" class="bateria">🔋</label>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+        <div class="rayo">⚡</div>
+    
+    </div>
+    <h1>Formulas</h1>
+    <h2>Corriente Total:</h2>
+    <ol>
+    <li>La fórmula fundamental para calcular la corriente total (It
+) en un circuito eléctrico, basada en la Ley de Ohm, es
+It = Vt / Rt. Esta fórmula divide el voltaje total (Vt
+) de la fuente entre la resistencia total o equivalente (Rt
+) del circuito. La corriente se mide en amperios (A)</li>
+    </ol>   
+    <h2>Resistencia Total:</h2>
+    <ol>
+        <li>La resistencia total (Rt) de un circuito en paralelo se calcula como el recíproco de la suma de los inversos de cada resistencia:
+1/Rt = 1/R1 + 1/R2 + ... + 1/Rn. Para solo dos resistencias, la fórmula simplificada es el producto sobre la suma:
+Rt=(R1×R2)/(R1+R2). La resistencia total siempre es menor que la menor de las resistencias individuales.</li>
+    </ol>
+</body>
+</html>
